@@ -45,5 +45,5 @@ You would proably want to understand the Data Model modelling first and then div
 
 [The Data Model](data_model.md)
 
-[The EVL Templates](data_model.md)
+[The EVL Templates](evl_templates.md)
 
