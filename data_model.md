@@ -30,6 +30,8 @@ This is all the information needed to create the Shcema node definitions.
 
 EMF models support bi--directional relationships between classes by defining one EReference as the oppoiste of the other. In OrientDB, a single edge is needed to define the relationship. In order to avoid double edges EReferences that should be used as edges must be annotated and the source must be *https://eclipse.org/epsilon/incremental/OrientDbGraph*. This annotation should have a single value with key "edge" and value "true".
 
+For example, thhe ExecutionContext refrence *involves* has defined as an edge.
+
 And that is pretty much it. I planned an additional annotation for Attributes that use a type other than the standard EMF (Java) types so the mapping between the specifc type and the OrientDB supported types can be defined... but didn't implement it as atm was not needed.
 
 # The GenModel
