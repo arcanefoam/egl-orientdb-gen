@@ -47,3 +47,12 @@ You would proably want to understand the Data Model modelling first and then div
 
 [The EVL Templates](evl_templates.md)
 
+# The Static Code
+
+For the sake of completeness two non-generated classes are included. One is the business to data connection and the other is a DB utility class with connection helper methods (and a class wrapper for the delagating classes).
+
+## OrientDbTraceManager.java
+
+This class implements the IExecutionTraceManager interface defined in the business layer. This class uses an instance of the automatically generated DAO class to work with the DB objects and provide the business logic. Initially I was hoping the aquire, get/find and create methods could be automatically generated, but for each class there are different conditions on what is needed to aquire/get/create an instance... I did not manage to craete a simple way to define this in the metamodel (e.g. another annotation that provides the details). For example, for classes with index the get could be trivial, but for the Trace class you need to match a pattern in order to find it. I think it would require a "pattern language" or something to be used in the annotation to be able to express the complex interactions between the nodes in order to find somehting (e.g. that when looking for a trace youe need to match the element and the property, given a particualr module on a given context...). For this "small" demo it was too much work and probably not worth it. With the DAO implementation in place, writing the aquire/get/create methods was pretty simple. Just remember that templates usually excel at generating similar repetitive code and the business logic is not it :).
+
+
