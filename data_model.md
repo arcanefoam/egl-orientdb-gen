@@ -46,6 +46,20 @@ On the Properties View expand the **All** section, there should be a *Base Packa
 
 ## General Settings
 
-Click on the GenModel node in the GenModel view (the root node). Expand the **All** section. The preffered settings are:
+Click on the GenModel node in the GenModel view (the root node). Expand the **All** section. The preferred settings are:
 
-* Bundle Manifest:	false
+* Bundle Manifest:	false.  This will make sure that the generator does not mess up our MANIFEST and package.xml files. This assumes you are generating the code in a business plugin that has a previous MANIFEST that you want to preserve.
+
+## Model Settings
+
+The Model section defines how the model code is generated. The preferred settings are:
+
+* Model Directory:	/org.eclipse.epsilon.orientdb.business/emf-gen.  This should point to where the code shouls be generated. The java classes will be added according to the base pacakge defined previously.
+
+## Model Feature Defaults Settings
+
+Model Feature Defaults provides additional control over code generation. The preferred settings are:
+
+* Suppress EMF Types:	true. This will ensure the generated Interface do NOT use any of the EMF types. This is important so your DB implementaiton does not have a dependencies on EMF.
+
+For all other settings use default values.... or modify them if you know what you are doing ;).
