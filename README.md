@@ -4,7 +4,7 @@ Epsilon EVL demo project to generate OrientDB CRUD implementation using the Grap
 
 ##  DISCLAIMER
 
-I am **NOT** an experienced DB programer and thus the generated code will most likely be "ugly"; incorrect use of API, incorrect separation of concerns, incorrect use of Frames and Pipes, etc. The purpose is to ilustrate how EVL can be used to generate CRUD code for a DB, not how to write CRUD code ;). Ergo, this code is not fully functional. Just a skeleton with basic functionality.
+I am **NOT** an experienced DB programer and thus the generated code will most likely be "ugly"; incorrect separation of concerns, incorrect use of Frames and Pipes, inefficent, wrong design pattern, etc. The purpose is to ilustrate how EVL can be used to generate CRUD code for a DB, not how to write CRUD code ;). Ergo, this code (the EVL tempaltes) would probably need improvements to make it production ready.
 
 ## Requirements
 
