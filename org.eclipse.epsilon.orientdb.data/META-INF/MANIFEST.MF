@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Data Layer
+Bundle-SymbolicName: org.eclipse.epsilon.orientdb.data
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Epsilon
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.epsilon.orientdb.business;bundle-version="1.0.0"

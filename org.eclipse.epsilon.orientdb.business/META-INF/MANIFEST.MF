@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Business Layer
+Bundle-SymbolicName: org.eclipse.epsilon.orientdb.business
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: Epsilon
+Export-Package: org.eclipse.epsilon.orientdb.business.trace,
+ org.eclipse.epsilon.orientdb.business.trace.impl,
+ org.eclipse.epsilon.orientdb.business.trace.util
