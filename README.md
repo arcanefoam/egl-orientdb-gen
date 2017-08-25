@@ -14,20 +14,20 @@ You need then to import the plugins in this repo to your Eclipse workspace:
   
     File -> Import -> Existing Projects into Workspace (follow the instructions)
     
-**Note:** I have not commited any of the generated code so after importing your projects will most likely won't compile and you will get a lot of 'The import xxx cannot be resolved'.
+**Note:** I have not commited any of the generated code so after importing your projects will most likely won't compile and you will get a lot of 'The import xxx cannot be resolved' errors.
 
 
-## Runing the generators
+## Running the generators
 
 We need to generate two pieces of code: the Data Model (defined by the business layer) and the DB code (used in the data layer). The Data Model code is generated using EMF's generator model. 
 
-1. Open the ExecutionTrace.genmodel (org.eclipse.epsilon.orientdb.business/model). Right click on the firt element in the tree view and select: Generate Model Code. A bunch of files should have been generated in the emf-gen folder. Note that the EMF genmodel uses it's own internal generators. 
+1. Open the ExecutionTrace.genmodel (org.eclipse.epsilon.orientdb.business/model). Right click on the first element in the tree view and select: Generate Model Code. A bunch of files should have been generated in the emf-gen folder. Note that the EMF genmodel uses it's own internal generators. 
 
 2. Locate the EcoreToOrientDB_Demo.launch at the root of the org.eclipse.epsilon.orientdb.data project. Right click on it and select Run as.. > EcoreToOrientDB_Demo. You should see a *GenDone* message in the console and a bunch of pacakges and files should have been generated in the src-gen folder.
 
 ## The generated code
 
-1. The EMF generator model generates the Data Model API. Basically, we are interested in the Interfaces generated in org.eclipse.epsilon.orientdb.business/emf-gen/org/eclipse/epsilon/orientdb/business/trace/. POJOs implementing this interfaces are intended to be used to move data between the laters. For example, the generated OrientDB code provides classes that implement these interfaces.
+1. The EMF generator model generates the Data Model API. Basically, we are interested in the Interfaces generated in org.eclipse.epsilon.orientdb.business/emf-gen/org/eclipse/epsilon/orientdb/business/trace/. POJOs implementing this interfaces are intended to be used to move data between the layers. For example, the generated OrientDB code provides classes that implement these interfaces.
 
 2. The EcoreToOrientDB_Demo launch executes the org.eclipse.epsilon.orientdb.data/src/org/eclipse/epsilon/orientdb/data/generation/EcoreToOrientDB.egx EGX Script. This script is responsible for orchestrating the different EVL scripts that generate the DB code. The DB code includes Vertex and Edge definitions to provide a DB schema (sr-gen/org.eclipse.epsilon.orientdb.data.trace), implementations of the Data Model that delegate to DB objects (srg-gen/org.eclipse.epsilon.orientdb.data.trace.impl/) and a DAO class that provides the CRUD methods for each of the Data Model classes (src-gen/org.eclipse.epsilon.orientdb.data.execute/TraceOrientDbDAO.java)
 
