@@ -29,3 +29,17 @@ In the current implementation nodes are prefixed with V and edges with E, but th
 # EClass2OrientImpl.egl
 
 This template generates an implementation of the Data Model interfaces using a delegator pattern. The delegate is the node class created by EClass2Vertex.egl. This template also provides alternative implementations for attributes and references with multiplicity values > 1. The main reason is that the OrientDB API uses Iterable<X> for multi-valued relations, so we need to turn this into a List<X> as defined by the metamodel API.
+
+# EPackage2OrientDbDAO.egl
+
+This template generates the Schema creation and the CRUD methods. For the Schema creation the template used the annotation information (e.g. to crate indices). Four CRUD methods are created for each ECLass: 
+* create<X>(args...)
+* delete<X>(Vertex v)
+* update<X>(Vertex v)
+* get<X>ById(Object id)
+
+and if the EClass defines an index and additional get<X>ByIndex is created too. In this paricular implementation all the CRUD operations are atomic, this is, the operation gets the Graph reference, operates, optionally commits and then shutsdown the graph. This means that any class usinf the DAO will work with detached objects. For this reason, a *getManager()* method was generated in order to allow other classes to control the DB connection. 
+    
+# EcoreToOrientDB.egx
+
+This is the EGX program that invokes each of the EVL templates on the approiate metamodel element. Some global paramters are defined in this program (e.g. the base qualified package) for all EVL templates to share. 
