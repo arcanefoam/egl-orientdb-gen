@@ -1,6 +1,6 @@
-# EVL OrientDB CRUD Generator
+# EGL OrientDB CRUD Generator
 
-Epsilon EVL demo project to generate OrientDB CRUD implementation using the Graph API
+Epsilon EGL demo project to generate OrientDB CRUD implementation using the Graph API
 
 ##  DISCLAIMER
 
